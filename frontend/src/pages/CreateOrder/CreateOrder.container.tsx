@@ -1,29 +1,32 @@
-import { useEffect, useState } from "react";
-import { getMenuItems, GetMenuItemsResponse } from "../../services/menu";
+import { useEffect, useState } from 'react'
+import { getMenuItems, GetMenuItemsResponse } from '../../services/menu'
 import {
   CreateOrderPrivateProps,
   CreateOrderPublicProps,
-} from "./CreateOrder.props";
-import CreateOrderView from "./CreateOrder.view";
+} from './CreateOrder.props'
+import CreateOrderView from './CreateOrder.view'
 
 const CreateOrder = (props: CreateOrderPublicProps) => {
-  
+  const [menuItems, setMenuItems] = useState<GetMenuItemsResponse>({
+    items: [],
+    rules: {},
+  })
 
   useEffect(() => {
     // TODO: Fetch menu data
     const fetchData = async () => {
-      
-    };
-
-    fetchData();
-  }, []);
+      const result = await getMenuItems()
+      setMenuItems(result)
+    }
+    fetchData()
+  }, [])
 
   const generatedProps: CreateOrderPrivateProps = {
-    items: [],
-    rules: {},
-  };
+    items: menuItems.items,
+    rules: menuItems.rules,
+  }
 
-  return <CreateOrderView {...generatedProps} />;
-};
+  return <CreateOrderView {...generatedProps} />
+}
 
-export default CreateOrder;
+export default CreateOrder

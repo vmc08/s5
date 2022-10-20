@@ -5,3 +5,15 @@
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+.radioInput label {
+  cursor: pointer;
+}
+
+.radioInput input {
+  margin-right: 12px;
+}
+
+.radioInput.disabled {
+  color: red;
+}

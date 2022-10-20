@@ -3,5 +3,22 @@
   flex-direction: column;
   width: 300px;
   padding: 32px;
-  border: 1px black solid;
+  border-radius: 16px;
+  border: 4px dashed rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.submit-button {
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+  background: rgb(128 128 128 / 20%);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: rgb(128 128 128 / 50%);
 }

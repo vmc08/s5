@@ -1,10 +1,10 @@
-import { Items, Rules } from "../../types/Menu";
+import { Items, Rules } from '../../types/Menu'
 
 export interface CreateOrderPublicProps {}
 
 export interface CreateOrderPrivateProps {
-  items: Items;
-  rules: Rules;
+  items: Items
+  rules: Rules
 }
 
 export interface CreateOrderProps
